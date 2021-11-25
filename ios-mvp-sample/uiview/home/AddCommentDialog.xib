@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddCommentDialog" customModule="cheeeze_ios" customModuleProvider="target">
+            <connections>
+                <outlet property="addButton" destination="exz-Nh-VUX" id="D58-9b-9RF"/>
+                <outlet property="addImageButton" destination="DMr-yt-8LK" id="rkZ-Lk-fTP"/>
+                <outlet property="cancelButton" destination="EnX-eU-a1U" id="ylb-RI-ZCi"/>
+                <outlet property="mapView" destination="5JT-TC-BPf" id="HBf-gI-yOQ"/>
+                <outlet property="textView" destination="kpv-8m-Y2V" id="Q1M-fu-WOs"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="432" height="743"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Jr-n9-3Vo">
+                    <rect key="frame" x="21.5" y="37" width="389" height="669"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="86x-1s-e6h">
+                            <rect key="frame" x="0.0" y="0.0" width="389" height="669"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ynR-Mn-Jeu">
+                                    <rect key="frame" x="0.0" y="0.0" width="389" height="559"/>
+                                    <subviews>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="kpv-8m-Y2V">
+                                            <rect key="frame" x="0.0" y="0.0" width="389" height="279.5"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <color key="textColor" systemColor="labelColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
+                                        <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="5JT-TC-BPf">
+                                            <rect key="frame" x="0.0" y="279.5" width="389" height="279.5"/>
+                                        </mapView>
+                                    </subviews>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EPu-Og-c6t">
+                                    <rect key="frame" x="0.0" y="564" width="389" height="50"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DMr-yt-8LK">
+                                            <rect key="frame" x="0.0" y="0.0" width="48" height="50"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" image="photo.artframe" catalog="system"/>
+                                        </button>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UGM-zu-68a">
+                                            <rect key="frame" x="48" y="0.0" width="341" height="50"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        </view>
+                                    </subviews>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Mph-WU-IAw">
+                                    <rect key="frame" x="0.0" y="619" width="389" height="50"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d8R-rS-OXV">
+                                            <rect key="frame" x="0.0" y="0.0" width="230.5" height="50"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        </view>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EnX-eU-a1U">
+                                            <rect key="frame" x="235.5" y="0.0" width="95.5" height="50"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" title="キャンセル"/>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="exz-Nh-VUX">
+                                            <rect key="frame" x="336" y="0.0" width="53" height="50"/>
+                                            <color key="tintColor" systemColor="systemGreenColor"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="filled" title="投稿"/>
+                                        </button>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="86x-1s-e6h" secondAttribute="bottom" id="G87-XA-Wqv"/>
+                        <constraint firstAttribute="trailing" secondItem="86x-1s-e6h" secondAttribute="trailing" id="ONa-Qb-cF7"/>
+                        <constraint firstItem="86x-1s-e6h" firstAttribute="top" secondItem="8Jr-n9-3Vo" secondAttribute="top" id="S2R-b7-5uI"/>
+                        <constraint firstItem="86x-1s-e6h" firstAttribute="leading" secondItem="8Jr-n9-3Vo" secondAttribute="leading" id="Y6m-xb-Ysq"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.27371862550444953" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="8Jr-n9-3Vo" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.9" id="Jk7-hJ-Xzb"/>
+                <constraint firstItem="8Jr-n9-3Vo" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="fzg-ML-yxh"/>
+                <constraint firstItem="8Jr-n9-3Vo" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="m0J-44-aoF"/>
+                <constraint firstItem="8Jr-n9-3Vo" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.9" id="vsi-zL-s0U"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="432" y="-7"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="photo.artframe" catalog="system" width="128" height="93"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
