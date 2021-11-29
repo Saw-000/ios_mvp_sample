@@ -10,7 +10,6 @@ import MapKit
 
 class AddCommentDialog: XibOwnerView {
     @IBOutlet weak var textView: UITextView!
-    @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var addImageButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var addButton: UIButton!

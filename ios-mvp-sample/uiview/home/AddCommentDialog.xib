@@ -2,19 +2,17 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddCommentDialog" customModule="cheeeze_ios" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddCommentDialog" customModule="ios_mvp_sample" customModuleProvider="target">
             <connections>
                 <outlet property="addButton" destination="exz-Nh-VUX" id="D58-9b-9RF"/>
                 <outlet property="addImageButton" destination="DMr-yt-8LK" id="rkZ-Lk-fTP"/>
                 <outlet property="cancelButton" destination="EnX-eU-a1U" id="ylb-RI-ZCi"/>
-                <outlet property="mapView" destination="5JT-TC-BPf" id="HBf-gI-yOQ"/>
                 <outlet property="textView" destination="kpv-8m-Y2V" id="Q1M-fu-WOs"/>
             </connections>
         </placeholder>
@@ -33,15 +31,12 @@
                                     <rect key="frame" x="0.0" y="0.0" width="389" height="559"/>
                                     <subviews>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="kpv-8m-Y2V">
-                                            <rect key="frame" x="0.0" y="0.0" width="389" height="279.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="389" height="559"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <color key="textColor" systemColor="labelColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
-                                        <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="5JT-TC-BPf">
-                                            <rect key="frame" x="0.0" y="279.5" width="389" height="279.5"/>
-                                        </mapView>
                                     </subviews>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EPu-Og-c6t">
