@@ -12,7 +12,7 @@ protocol CommentListPresenterInput {
     func getCommentCellInfo(at index: Int) -> CommentCellInfo?
     func numberOfSections() -> Int
     func tableView(numberOfRowsInSection: Int) -> Int
-    func didTapAddNewListButtonButton()
+    func dispatchViewEvent(_ event: CommentListViewEvent)
 }
 protocol CommentListPresenterOutput: AnyObject {
     func setNavigationBarTitle(title: String?)
@@ -75,32 +75,40 @@ extension CommentListPresenter: CommentListPresenterInput {
         model.getCurrentListComments()?.count ?? 0
     }
     
-    func didTapAddNewListButtonButton() {
-        view.presentAddCommentListDialog { info in
-            guard
-                let userId = self.model.getUser()?.id,
-                let info = info
-            else {
-                // debug: エラーダイアログ
-                return
-            }
-            let newList = CommentList(title: info.title, creatorId: userId, commentIds: [])
-            self.model.createCommentList(list: newList) { success in
-                DispatchQueue.main.async {
-                    self.view.presentAlert(
-                        info: AlertInfo(
-                            title: nil,
-                            message: success ? "新しいリストを作成しました" : "リストの作成に失敗しました",
-                            style: .ALERT,
-                            buttonInfos: [
-                                AlertButtonInfo(
-                                    buttonTitle: "OK",
-                                    buttonType: .DEFAULT)
-                            ]
+    // dispatch view events
+    func dispatchViewEvent(_ event: CommentListViewEvent) {
+        switch event {
+            
+        case .ADD_NEW_LIST_BUTTON:
+            view.presentAddCommentListDialog { info in
+                guard
+                    let userId = self.model.getUser()?.id,
+                    let info = info
+                else {
+                    // debug: エラーダイアログ
+                    return
+                }
+                let newList = CommentList(title: info.title, creatorId: userId, commentIds: [])
+                self.model.createCommentList(list: newList) { success in
+                    DispatchQueue.main.async {
+                        self.view.presentAlert(
+                            info: AlertInfo(
+                                title: nil,
+                                message: success ? "新しいリストを作成しました" : "リストの作成に失敗しました",
+                                style: .ALERT,
+                                buttonInfos: [
+                                    AlertButtonInfo(
+                                        buttonTitle: "OK",
+                                        buttonType: .DEFAULT)
+                                ]
+                            )
                         )
-                    )
+                    }
                 }
             }
+            
+        case .COMMENT_CELL_SELECTED(let indexPath):
+            print("some process with: \(indexPath)")
         }
     }
 }

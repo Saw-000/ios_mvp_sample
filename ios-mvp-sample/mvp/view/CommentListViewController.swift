@@ -36,7 +36,7 @@ class CommentListViewController: UIViewController {
             self, action: #selector(onAddNewListButtonButton), for: .touchUpInside)
     }
     @objc private func onAddNewListButtonButton(_ b: UIButton) {
-        presenter.didTapAddNewListButtonButton()
+        presenter.dispatchViewEvent(.ADD_NEW_LIST_BUTTON)
     }
 }
 
@@ -69,6 +69,7 @@ extension CommentListViewController: UITableViewDelegate, UITableViewDataSource 
     // タップ時の処理
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        presenter.dispatchViewEvent(.COMMENT_CELL_SELECTED(indexPath))
     }
     
 }

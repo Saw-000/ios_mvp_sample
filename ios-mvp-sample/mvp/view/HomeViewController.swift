@@ -36,7 +36,7 @@ class HomeViewController: UIViewController {
     }
     
     @objc private func onAddCommentButton(_ b: UIButton) {
-        presenter.didTapAddCommentButton()
+        presenter.dispatchViewEvent(.ADD_COMMENT_BUTTON)
     }
 }
 
@@ -69,6 +69,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     // タップ時の処理
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        presenter.dispatchViewEvent(.CELL_SELECTED(indexPath))
     }
     
 }

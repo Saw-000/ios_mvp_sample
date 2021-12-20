@@ -68,6 +68,8 @@
 		C798629D274F6FBF00612918 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7986264274F6FBF00612918 /* User.swift */; };
 		C798629E274F6FBF00612918 /* CommentList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7986265274F6FBF00612918 /* CommentList.swift */; };
 		C798629F274F6FBF00612918 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7986267274F6FBF00612918 /* Api.swift */; };
+		C7FE487D2770D478003B0441 /* HomeViewEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FE487C2770D478003B0441 /* HomeViewEvent.swift */; };
+		C7FE48802770D572003B0441 /* CommentListViewEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FE487F2770D572003B0441 /* CommentListViewEvent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -134,6 +136,8 @@
 		C7986264274F6FBF00612918 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C7986265274F6FBF00612918 /* CommentList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentList.swift; sourceTree = "<group>"; };
 		C7986267274F6FBF00612918 /* Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		C7FE487C2770D478003B0441 /* HomeViewEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewEvent.swift; sourceTree = "<group>"; };
+		C7FE487F2770D572003B0441 /* CommentListViewEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentListViewEvent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,7 +171,6 @@
 			isa = PBXGroup;
 			children = (
 				C7986259274F6FBF00612918 /* database */,
-				C798623D274F6FBE00612918 /* enum */,
 				C7986236274F6FBE00612918 /* extension */,
 				C798623F274F6FBF00612918 /* mvp */,
 				C798621B274F6FBE00612918 /* uiview */,
@@ -205,8 +208,8 @@
 				C7986223274F6FBE00612918 /* notification */,
 				C7986229274F6FBE00612918 /* follow */,
 				C798622C274F6FBE00612918 /* commentList */,
-				C7986231274F6FBE00612918 /* CommentTableViewCell.swift */,
 				C7986232274F6FBE00612918 /* mypage */,
+				C7986231274F6FBE00612918 /* CommentTableViewCell.swift */,
 				C7986235274F6FBE00612918 /* CommentTableViewCell.xib */,
 			);
 			path = uiview;
@@ -299,14 +302,6 @@
 			path = uikit;
 			sourceTree = "<group>";
 		};
-		C798623D274F6FBE00612918 /* enum */ = {
-			isa = PBXGroup;
-			children = (
-				C798623E274F6FBE00612918 /* NotificationType.swift */,
-			);
-			path = enum;
-			sourceTree = "<group>";
-		};
 		C798623F274F6FBF00612918 /* mvp */ = {
 			isa = PBXGroup;
 			children = (
@@ -321,9 +316,9 @@
 		C7986240274F6FBF00612918 /* uidata */ = {
 			isa = PBXGroup;
 			children = (
-				C7986241274F6FBF00612918 /* NotificationCellInfo.swift */,
-				C7986242274F6FBF00612918 /* AddCommentDialogCallbackInfo.swift */,
-				C7986243274F6FBF00612918 /* AddCommentListDialogCallbackInfo.swift */,
+				C7FE487E2770D559003B0441 /* commentlist */,
+				C7FE487B2770D455003B0441 /* home */,
+				C7FE48812770DB7F003B0441 /* notification */,
 				C7986244274F6FBF00612918 /* CommentCellInfo.swift */,
 				C7986245274F6FBF00612918 /* AlertButtonInfo.swift */,
 				C7986246274F6FBF00612918 /* AlertInfo.swift */,
@@ -404,6 +399,7 @@
 				C7986261274F6FBF00612918 /* NotificationContents.swift */,
 				C7986262274F6FBF00612918 /* Notification.swift */,
 				C7986263274F6FBF00612918 /* NotificationFollowedContent.swift */,
+				C798623E274F6FBE00612918 /* NotificationType.swift */,
 			);
 			path = Notification;
 			sourceTree = "<group>";
@@ -414,6 +410,32 @@
 				C7986267274F6FBF00612918 /* Api.swift */,
 			);
 			path = api;
+			sourceTree = "<group>";
+		};
+		C7FE487B2770D455003B0441 /* home */ = {
+			isa = PBXGroup;
+			children = (
+				C7986242274F6FBF00612918 /* AddCommentDialogCallbackInfo.swift */,
+				C7FE487C2770D478003B0441 /* HomeViewEvent.swift */,
+			);
+			path = home;
+			sourceTree = "<group>";
+		};
+		C7FE487E2770D559003B0441 /* commentlist */ = {
+			isa = PBXGroup;
+			children = (
+				C7986243274F6FBF00612918 /* AddCommentListDialogCallbackInfo.swift */,
+				C7FE487F2770D572003B0441 /* CommentListViewEvent.swift */,
+			);
+			path = commentlist;
+			sourceTree = "<group>";
+		};
+		C7FE48812770DB7F003B0441 /* notification */ = {
+			isa = PBXGroup;
+			children = (
+				C7986241274F6FBF00612918 /* NotificationCellInfo.swift */,
+			);
+			path = notification;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -502,6 +524,7 @@
 				C7986277274F6FBF00612918 /* CommentTableViewCell.swift in Sources */,
 				C7986292274F6FBF00612918 /* FollowViewController.swift in Sources */,
 				C7986270274F6FBF00612918 /* NotificationTableViewCell.swift in Sources */,
+				C7FE487D2770D478003B0441 /* HomeViewEvent.swift in Sources */,
 				C798628C274F6FBF00612918 /* FollowModel.swift in Sources */,
 				C7986291274F6FBF00612918 /* HomeViewController.swift in Sources */,
 				C798628B274F6FBF00612918 /* HomePresenter.swift in Sources */,
@@ -520,6 +543,7 @@
 				C7986296274F6FBF00612918 /* ApiRepository.swift in Sources */,
 				C798627D274F6FBF00612918 /* UIViewController+ext.swift in Sources */,
 				C7986282274F6FBF00612918 /* AddCommentDialogCallbackInfo.swift in Sources */,
+				C7FE48802770D572003B0441 /* CommentListViewEvent.swift in Sources */,
 				C798629C274F6FBF00612918 /* NotificationFollowedContent.swift in Sources */,
 				C7986289274F6FBF00612918 /* CommentListPresenter.swift in Sources */,
 				C7986271274F6FBF00612918 /* FollowRootView.swift in Sources */,

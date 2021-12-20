@@ -12,7 +12,7 @@ protocol HomePresenterInput {
     func getCommentCellInfo(at index: Int) -> CommentCellInfo?
     func numberOfSections() -> Int
     func tableView(numberOfRowsInSection: Int) -> Int
-    func didTapAddCommentButton()
+    func dispatchViewEvent(_ event: HomeViewEvent)
 }
 protocol HomePresenterOutput: AnyObject {
     func setNavigationBarTitle(title: String?)
@@ -32,7 +32,6 @@ class HomePresenter {
         self.view = view
         self.model = model
     }
-    
 }
 
 extension HomePresenter: HomePresenterInput {
@@ -74,35 +73,43 @@ extension HomePresenter: HomePresenterInput {
         model.getComments().count
     }
     
-    func didTapAddCommentButton() {
-        view.presentAddCommentDialog { info in
-            guard
-                let info = info,
-                let creatorId = self.model.getUser()?.id
-            else {
-                // debug: 警告荒tーお
-                return
-            }
+    // dispatch view events
+    func dispatchViewEvent(_ event: HomeViewEvent) {
+        switch event {
             
-            // 新コメントの作成
-            let newComment = Comment(
-                text: info.text,
-                creatorId: creatorId,
-                createdDate: Date().toString())
-            self.model.createComment(newComment) { success in
-                DispatchQueue.main.async {
-                    self.view.presentAlert(
-                        info: AlertInfo(
-                            title: nil,
-                            message: success ? "新しいコメントを作成しました" : "コメントの作成に失敗しました",
-                            style: .ALERT,
-                            buttonInfos: [
-                                AlertButtonInfo(
-                                    buttonTitle: "OK",
-                                    buttonType: .DEFAULT)
-                            ]
+        case .CELL_SELECTED(let indexPath):
+            print("some process with: \(indexPath)")
+            
+        case .ADD_COMMENT_BUTTON:
+            view.presentAddCommentDialog { info in
+                guard
+                    let info = info,
+                    let creatorId = self.model.getUser()?.id
+                else {
+                    // debug: 警告荒tーお
+                    return
+                }
+                
+                // 新コメントの作成
+                let newComment = Comment(
+                    text: info.text,
+                    creatorId: creatorId,
+                    createdDate: Date().toString())
+                self.model.createComment(newComment) { success in
+                    DispatchQueue.main.async {
+                        self.view.presentAlert(
+                            info: AlertInfo(
+                                title: nil,
+                                message: success ? "新しいコメントを作成しました" : "コメントの作成に失敗しました",
+                                style: .ALERT,
+                                buttonInfos: [
+                                    AlertButtonInfo(
+                                        buttonTitle: "OK",
+                                        buttonType: .DEFAULT)
+                                ]
+                            )
                         )
-                    )
+                    }
                 }
             }
         }
